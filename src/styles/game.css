@@ -1,47 +1,78 @@
 #game-container {
   height: auto;
-  width: 80%;  
-  display: flex; 
-  flex-direction: column; 
+  width: 80%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-#title {
-  text-align: center; 
-  font-size: 2rem; 
-  text-shadow
+.title {
+  text-align: center;
+  font-size: 2rem;
 }
 
-#scoreboard {
-  line-height: 0.5rem; 
-  border: 0.15rem solid white; 
-  padding-left: 1rem; 
-  width: 20%; 
-  border-radius: 0.15rem; 
-  font-size: clamp(0.4rem, 2vw, 1.5rem);
+.scoreboard {
+  line-height: 1.2;
+  border: 0.15rem solid white;
+  padding: 0.75rem 1rem;
+  width: 80%; 
+  height: auto;
+  border-radius: 0.15rem;
+  font-size: clamp(0.95rem, 3vw, 1.3rem);
   background-color: rgba(128, 128, 128, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.scoreboard .title {
+  margin: 0;
+  font-size: clamp(1rem, 4vw, 1.25rem);
 }
 
 .card-container {
-  margin-top: 5rem; 
-  width: 100%; 
-  display: grid; 
-  gap: 1rem; 
+  margin-top: 5rem;
+  width: 100%;
+  display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .game-card {
-  border: 0.15rem solid white; 
-  height: 15rem; 
-  border-radius: 0.15rem; 
-  text-align: center; 
-  font-size: 1.5rem; 
+  border: 0.15rem solid white;
+  height: 15rem;
+  border-radius: 0.15rem;
+  text-align: center;
+  font-size: 1.5rem;
   background-color: rgba(128, 128, 128, 0.5);
 }
 
 .game-card:hover {
-  cursor: pointer; 
-  background: grey; 
+  cursor: pointer;
+  background: grey;
 
   box-shadow: 0px 0px 0px 8px #000000;
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .scoreboard {
+    width: 90%;
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .scoreboard .title {
+    font-size: clamp(0.95rem, 5vw, 1.1rem);
+  }
+
+  .game-card {
+    height: 12rem;
+    font-size: 1.2rem;
+  }
 }
