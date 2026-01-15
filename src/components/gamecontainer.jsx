@@ -11,6 +11,9 @@ function GameContainer(){
 
   const handleCardClick = (id) => {
     if (clickedCards.has(id)) {
+      if (score > bestScore){
+        setBestScore(score);
+      }
       setScore(0);
       setClickedCards(new Set());
     } else {
@@ -18,7 +21,6 @@ function GameContainer(){
       newClicked.add(id);
       setClickedCards(newClicked);
       setScore(score + 1);
-      setBestScore(score + 1);
     }
   }
 
